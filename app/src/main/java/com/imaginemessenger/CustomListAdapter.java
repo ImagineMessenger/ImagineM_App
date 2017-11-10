@@ -50,9 +50,9 @@ public class CustomListAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.headlineView.setText(listData.get(position).getHeadline());
-        holder.reporterNameView.setText("By, " + listData.get(position).getReporterName());
-        holder.reportedDateView.setText(listData.get(position).getDate());
+        holder.headlineView.setText(listData.get(position).getSender());
+        holder.reporterNameView.setText("By, " + listData.get(position).getReceiver());
+        holder.reportedDateView.setText(listData.get(position).getMessage());
         return convertView;
     }
 

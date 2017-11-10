@@ -5,31 +5,42 @@ package com.imaginemessenger;
  */
 
 public class NewMessage {
-    private String headline;
-    private String reporterName;
-    private String date;
+    private String sender;
+    private String receiver;
+    private String message;
 
-    public String getHeadline() {
-        return headline;
+    public NewMessage(String sender, String receiver, String message)
+    {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.message = message;
     }
 
-    public void setHeadline(String headline) {
-        this.headline = headline;
+    public String getSender() {
+        return sender;
     }
 
-    public String getReporterName() {
-        return reporterName;
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 
-    public void setReporterName(String reporterName) {
-        this.reporterName = reporterName;
+    public String getReceiver() {
+        return receiver;
     }
 
-    public String getDate() {
-        return date;
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public String getMessage() {
+        return message;
     }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+
+
+
 }

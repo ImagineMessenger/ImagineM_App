@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Registration extends AppCompatActivity {
 
@@ -24,6 +26,8 @@ public class Registration extends AppCompatActivity {
     private ProgressBar progressBar;
     private TextView txtSignIn;
     private FirebaseAuth auth;
+
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +55,7 @@ public class Registration extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email = inputEmail.getText().toString().trim();
+                email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
@@ -84,6 +88,15 @@ public class Registration extends AppCompatActivity {
                                     Toast.makeText(Registration.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
+
+                                    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
+
+                                    String userId = mDatabase.push().getKey();
+
+                                    User user = new User(email);
+
+                                    mDatabase.child(userId).setValue(user);
+
                                     startActivity(new Intent(Registration.this, MainActivity.class));
                                     finish();
                                 }

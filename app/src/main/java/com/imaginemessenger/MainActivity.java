@@ -65,10 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList getListData(){
         ArrayList<NewMessage> results = new ArrayList<NewMessage>();
-        NewMessage newsData = new NewMessage();
-        newsData.setHeadline("Dance of Democracy");
-        newsData.setReporterName("Pankaj Gupta");
-        newsData.setDate("May 26, 2013, 13:35");
+        NewMessage newsData = new NewMessage("Dance of Democracy", "Pankaj Gupta", "Pankaj Gupta");
+
         results.add(newsData);
 
         // Add some more dummy data for testing
