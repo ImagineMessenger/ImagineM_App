@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "914902147354",
+    "firebase_url": "https://imaginemessenger.firebaseio.com",
+    "project_id": "imaginemessenger",
+    "storage_bucket": "imaginemessenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914902147354:android:da60789c6bb17bbe",
+        "android_client_info": {
+          "package_name": "com.imaginemessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914902147354-6hiiv3cno7lll70g7if21b6ucikkd63o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3-_c-Nh_mKXpCmuOy-LxeZVVg5BK5eG8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
