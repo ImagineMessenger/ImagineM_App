@@ -25,11 +25,15 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/text_mess"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1.00"
-        android:inputType="text" />
+        android:id ="@+id/text_mess"
+        android:layout_width ="wrap_content"
+        android:layout_height ="wrap_content"
+        android:layout_weight ="1"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLines ="4"
+        android:maxLength ="2000"
+        android:hint ="your message!"
+        android:scrollHorizontally="false" />
 
     <Spinner
         android:id="@+id/games"

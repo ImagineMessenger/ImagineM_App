@@ -3,6 +3,9 @@ package com.imaginemessenger;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,6 +14,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.imaginemessenger.R;
 
 import java.util.ArrayList;
@@ -22,21 +31,29 @@ public class MainActivity extends AppCompatActivity {
     private ListView mainListView ;
     private ArrayAdapter<String> listAdapter ;
 
+    private FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        View view = this.getWindow().getDecorView();
+        view.setBackgroundColor(getResources().getColor(R.color.activityc));
+
+        //Get Firebase auth instance
+        auth = FirebaseAuth.getInstance();
+
         final TextView message= (TextView) findViewById(R.id.welcome_mess);
         final Button button= (Button) findViewById(R.id.send_mess);
 
         Intent intent= getIntent();
-        String username= intent.getStringExtra("username");
-        String password= intent.getStringExtra("password");
+        String username= auth.getCurrentUser().getEmail();
+
         String msg_welcome= "Hi " +username+"!";
         message.setText(msg_welcome);
 
-
+        checkList();
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -48,18 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        ArrayList image_details = getListData();
-        final ListView lv1 = (ListView) findViewById(R.id.custom_list);
-        lv1.setAdapter(new CustomListAdapter(this, image_details));
-        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                Object o = lv1.getItemAtPosition(position);
-                NewMessage newsData = (NewMessage) o;
-                Toast.makeText(MainActivity.this, "Selected :" + " " + newsData, Toast.LENGTH_LONG).show();
-            }
-        });
 
     }
 
@@ -72,4 +78,92 @@ public class MainActivity extends AppCompatActivity {
         // Add some more dummy data for testing
         return results;
     }
+
+
+
+
+    // add items into spinner dynamically
+    public void checkList() {
+
+
+        DatabaseReference root = FirebaseDatabase.getInstance().getReference();
+
+        final String user = auth.getCurrentUser().getEmail().toString().trim();
+        root.child("messages").orderByChild("receiver").equalTo(user).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    NewMessage m = snapshot.getValue(NewMessage.class);
+                    System.out.println(m.getMessage());
+
+                    ArrayList<NewMessage> results = new ArrayList<NewMessage>();
+                    results.add(m);
+                }
+
+
+                //TODO: value are iterate, we need to put them in the adapter
+
+                    /*ArrayList image_details = results;
+                    final ListView lv1 = (ListView) findViewById(R.id.custom_list);
+                    lv1.setAdapter(new CustomListAdapter(this, image_details));
+                    lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                        @Override
+                        public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                            Object o = lv1.getItemAtPosition(position);
+                            NewMessage newsData = (NewMessage) o;
+                            Toast.makeText(MainActivity.this, "Selected :" + " " + newsData, Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+                }else {
+
+                }*/
+            }
+
+            @Override
+            public void onCancelled(DatabaseError firebaseError) {
+                //Error
+            }
+        });
+
+
+
+    }
+
+
+
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.search:
+                //your code here
+
+                Intent intent = new Intent(MainActivity.this, Login.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                auth.signOut();
+                startActivity(intent);
+
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }

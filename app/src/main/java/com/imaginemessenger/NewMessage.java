@@ -9,6 +9,8 @@ public class NewMessage {
     private String receiver;
     private String message;
 
+    public NewMessage(){}
+
     public NewMessage(String sender, String receiver, String message)
     {
         this.sender = sender;

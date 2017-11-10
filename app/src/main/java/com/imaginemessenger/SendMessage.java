@@ -2,6 +2,7 @@ package com.imaginemessenger;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -9,6 +10,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -44,6 +47,9 @@ public class SendMessage  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.send_message);
 
+        View view = this.getWindow().getDecorView();
+        view.setBackgroundColor(getResources().getColor(R.color.activityc));
+
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
         go = (Button) findViewById(R.id.search);
@@ -62,7 +68,7 @@ public class SendMessage  extends AppCompatActivity {
             public void onClick(View v){
 
                 insertNewMessage();
-                //auth.signOut();
+
             }
 
         });
@@ -107,20 +113,51 @@ public class SendMessage  extends AppCompatActivity {
 
     public void insertNewMessage(){
 
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("messages");
 
-        String messages = "messages";
+        Long tsLong = System.currentTimeMillis()/1000;
+        String ts = tsLong.toString();
 
         NewMessage mess = new NewMessage(auth.getCurrentUser().getEmail(), checkuser.getText().toString().trim(),
                 messageText.getText().toString());
 
-        mDatabase.child(messages).setValue(mess);
+        mDatabase.child(ts).setValue(mess);
 
     }
 
     public void addListenerOnSpinnerGame() {
         spinner_game = (Spinner) findViewById(R.id.games);
         // spinner_game.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.search:
+                //your code here
+
+                Intent intent = new Intent(SendMessage.this, Login.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                auth.signOut();
+                startActivity(intent);
+
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }
