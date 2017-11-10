@@ -6,23 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.imaginemessenger.MainActivity"
-    android:gravity="center"
     android:weightSum="1">
 
     <TextView
         android:id="@+id/welcome_mess"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
 
     <ListView
-        android:id="@+id/list_view"
+        android:id="@+id/custom_list"
         android:layout_width="wrap_content"
-        android:layout_height="377dp"
-        android:layout_weight="0.88" />
+        android:layout_height="wrap_content" >
+    </ListView>
 
     <Button
         android:id="@+id/send_mess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SEND MESSAGE" />
+        android:text="SEND MESSAGE"
+        android:layout_gravity="center"/>
 </LinearLayout>
+

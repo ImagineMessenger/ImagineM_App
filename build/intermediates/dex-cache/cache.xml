@@ -3,138 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/a820951f77135adac0bf3a694f52a7586db614e4/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="568d5bda0b4d51f90d978ace369bb9ad024d2057">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1b4fa942621939c0b2cbe9d3f3bf4ebce09254e9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/b7c2e45e9968c84ee2045df75dca5249abcbed72/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="4022261eeea0d92eb2997a68d2c1f084a16abad9">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5fb8b8af9c54b9cfe9ce89f975732b711b578d3c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/ebf3811b55673817b328ff4ac59bfed178a59fcc/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2af283d3a2b4c42ea2b34801b0f6d4546e1ea781/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/711bcac36f4d7d8a3e5525c1b8d4f3cee100f9c7/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="b3d0809a742c5f768c6aa9efc6decd5c1d6cd227">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8aa02046dacfb98615541b60d70f0cb0e486d718/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_633dd29473d54ca4ec3a17f8f5218e04540121c5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/c8b008ffc9dcaf8e6b6a27274ee9df8a2f482f42/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="fa472b7cbd3897bf6bed6068ac0b00e494987688">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_335d647c426d2e6335a3ad25f205fead7fa8488d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/6489879827befb12d4eedf8b519d12f4e824c712/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="a511c684ea4c2cf31a3377d51e7677cb76696e07">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f68c8fcafacd58debdc955839cbf1868142d7f9f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/07a638a7ef9ed8040d1222af9e5589e6910b42f7/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="79e298d7fed2fcada58da7032d07d34ee198a545">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_53ea31cc5b951909a01e1df6bec44b3004aafe32/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/6.1.0/63735f48b82bcd24cdd33821342428252eb1ca5a/butterknife-6.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="63735f48b82bcd24cdd33821342428252eb1ca5a">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-6.1.0_285d4939b22d2d3163d7a0961d24c8c90515f22f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/1af3161c73c484f37f8411b7b0f2e913826dda39/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="9919563cffd8e3732e944d3c437d4b9575a08448">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_88d539e84f31764c68edab4b418a2469b501d0e3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="7884bb914becd5798b739554c49d35bc5213eeea">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_df9948488fe3e3ef1861e2170cad11581da5072b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/bedab73451f7c9429a64e95b6783cd00217b4791/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="51a11c41a08f099a204e1b8dcc04f27217de50ec">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1a25f95065f1482c3ef65efe81ef117979641b2f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/d8d933c9ed01447591d6fb453be6f27fe5152c2f/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_730c652df8c159e9dcd98198d552addccfa1cea2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_38c351fed96bc79cdef7cc0a59943eb6acad8751/classes.dex" />
+        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_1099237c516a6311c2cd7a7fb3ea0e8db58087ae/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/alessiospallino/.android/build-cache/eff05fb5e1e5b1eb00b2f017b3432489bb061dee/output/jars/classes.jar"
+        jar="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="94d9cedd04b124aed044ac71c451a292856d854c">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineMessenger/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_54a0e4dc5f8c37e40b3d2662d715991f108c032d/classes.dex" />
+        sha1="70be28db8fcae5dade44fcaf842c02304da24458">
+        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_140b1932e4f28646179bb8704286baade4eba0eb/classes.dex" />
     </item>
 
 </items>
