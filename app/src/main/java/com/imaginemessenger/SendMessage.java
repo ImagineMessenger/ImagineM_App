@@ -119,9 +119,12 @@ public class SendMessage  extends AppCompatActivity {
         String ts = tsLong.toString();
 
         NewMessage mess = new NewMessage(auth.getCurrentUser().getEmail(), checkuser.getText().toString().trim(),
-                messageText.getText().toString());
+                messageText.getText().toString().trim());
 
         mDatabase.child(ts).setValue(mess);
+
+        Toast.makeText(getApplicationContext(), "New message has been sent!",
+                Toast.LENGTH_LONG).show();
 
     }
 

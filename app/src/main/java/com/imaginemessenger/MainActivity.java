@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView mainListView ;
     private ArrayAdapter<String> listAdapter ;
+    private ProgressBar wait;
+
+    ArrayList<NewMessage> results;
 
     private FirebaseAuth auth;
 
@@ -41,18 +45,22 @@ public class MainActivity extends AppCompatActivity {
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(getResources().getColor(R.color.activityc));
 
+
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
         final TextView message= (TextView) findViewById(R.id.welcome_mess);
         final Button button= (Button) findViewById(R.id.send_mess);
+        wait = (ProgressBar) findViewById(R.id.progressBar1);
 
         Intent intent= getIntent();
         String username= auth.getCurrentUser().getEmail();
 
-        String msg_welcome= "Hi " +username+"!";
+        String msg_welcome= "Check your messages " + username + "!";
         message.setText(msg_welcome);
 
+        results = new ArrayList<NewMessage>();
+        wait.setVisibility(View.VISIBLE);
         checkList();
 
         button.setOnClickListener(new View.OnClickListener(){
@@ -69,15 +77,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private ArrayList getListData(){
-        ArrayList<NewMessage> results = new ArrayList<NewMessage>();
-        NewMessage newsData = new NewMessage("Dance of Democracy", "Pankaj Gupta", "Pankaj Gupta");
+    /*private ArrayList getListData(){
+
 
         results.add(newsData);
 
         // Add some more dummy data for testing
         return results;
-    }
+    }*/
 
 
 
@@ -85,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
     // add items into spinner dynamically
     public void checkList() {
 
-
+        final ListView lv1 = (ListView) findViewById(R.id.custom_list);
         DatabaseReference root = FirebaseDatabase.getInstance().getReference();
 
         final String user = auth.getCurrentUser().getEmail().toString().trim();
@@ -96,38 +103,40 @@ public class MainActivity extends AppCompatActivity {
                     NewMessage m = snapshot.getValue(NewMessage.class);
                     System.out.println(m.getMessage());
 
-                    ArrayList<NewMessage> results = new ArrayList<NewMessage>();
                     results.add(m);
                 }
 
+                lv1.setAdapter(new CustomListAdapter(getApplicationContext(), results));
 
-                //TODO: value are iterate, we need to put them in the adapter
+                //Take out the progress bar!
 
-                    /*ArrayList image_details = results;
-                    final ListView lv1 = (ListView) findViewById(R.id.custom_list);
-                    lv1.setAdapter(new CustomListAdapter(this, image_details));
+                wait.setVisibility(View.INVISIBLE);
+
                     lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                         @Override
                         public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                             Object o = lv1.getItemAtPosition(position);
                             NewMessage newsData = (NewMessage) o;
-                            Toast.makeText(MainActivity.this, "Selected :" + " " + newsData, Toast.LENGTH_LONG).show();
+
+
+                            //TODO: If one item is clicked, we will have all the info inside the newsdata obj.
+                            //TODO: At that point we can call the unity game passing the message!
+
+
+
+                            Toast.makeText(MainActivity.this, "Selected :" + " " + newsData.getMessage().trim(), Toast.LENGTH_SHORT).show();
                         }
                     });
 
-                }else {
-
-                }*/
-            }
+                }
 
             @Override
-            public void onCancelled(DatabaseError firebaseError) {
+            public void onCancelled(DatabaseError databaseError) {
                 //Error
             }
+
         });
-
-
 
     }
 

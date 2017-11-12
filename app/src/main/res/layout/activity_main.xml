@@ -8,23 +8,42 @@
     tools:context="com.imaginemessenger.MainActivity"
     android:weightSum="1">
 
+
     <TextView
         android:id="@+id/welcome_mess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="50dp"/>
 
     <ListView
+        android:layout_marginTop="30dp"
         android:id="@+id/custom_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
     </ListView>
 
-    <Button
+
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/send_mess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SEND MESSAGE"
+        android:padding="12dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#0066ff"
+        android:textColor="@color/white"
+        android:text="SEND MESSAGE"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:indeterminate="true"
         android:layout_gravity="center"/>
 </LinearLayout>
 

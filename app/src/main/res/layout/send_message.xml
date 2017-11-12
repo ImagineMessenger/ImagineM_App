@@ -8,7 +8,8 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
 
         <EditText
             android:id="@+id/check_users"
@@ -18,6 +19,8 @@
 
         <Button
             android:id="@+id/search"
+            android:backgroundTint="#0066ff"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Check!" />
@@ -47,6 +50,9 @@
         android:id="@+id/send_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/buttonSendM" />
+        android:backgroundTint="#0066ff"
+        android:textColor="@color/white"
+        android:text="@string/buttonSendM"
+        android:layout_marginBottom="50dp"/>
 
 </LinearLayout>

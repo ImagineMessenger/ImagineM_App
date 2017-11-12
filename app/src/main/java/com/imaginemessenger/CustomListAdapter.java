@@ -43,22 +43,22 @@ public class CustomListAdapter extends BaseAdapter {
             convertView = layoutInflater.inflate(R.layout.list_message, null);
             holder = new ViewHolder();
             holder.headlineView = (TextView) convertView.findViewById(R.id.title);
-            holder.reporterNameView = (TextView) convertView.findViewById(R.id.reporter);
-            holder.reportedDateView = (TextView) convertView.findViewById(R.id.date);
+            holder.reporterNameView = (TextView) convertView.findViewById(R.id.sender);
+
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
         holder.headlineView.setText(listData.get(position).getSender());
-        holder.reporterNameView.setText("By, " + listData.get(position).getReceiver());
-        holder.reportedDateView.setText(listData.get(position).getMessage());
+        holder.reporterNameView.setText("Messaggio: " + listData.get(position).getMessage());
+
         return convertView;
     }
 
     static class ViewHolder {
         TextView headlineView;
         TextView reporterNameView;
-        TextView reportedDateView;
+
     }
 }

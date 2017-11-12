@@ -3,6 +3,33 @@
 
     <item
         is-multidex="true"
+        jar="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="260a433299111a9880962994ace667f7193a4084">
+        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_140b1932e4f28646179bb8704286baade4eba0eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/alessiospallino/.android/build-cache/3d49cb76653adf0562b666b9be2b28318f09d72d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9b8544d0c4d3a508ffc7da674ac79d5dc5d79395">
+        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bba3bcde68b35e6fd931f8a3abe4da8ae2ad7059/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/alessiospallino/.android/build-cache/dd468b21cb3dcd103dac9aa970a30a04a028f6db/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="fc387427a76c6a9fba40a490e48d244a989690c8">
+        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c24d3048c64f855fe37707721c908bd6942f8e41/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -12,12 +39,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/alessiospallino/.android/build-cache/a1ad2ab86cf3b9d454b78f1c997eec6e840ded57/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="3acbfef85b716f3d3a5a1dfc93a4cff143bc6bbe">
-        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_140b1932e4f28646179bb8704286baade4eba0eb/classes.dex" />
+        sha1="42c5ee016c8815db37d662f18c497aee13150f9e">
+        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a45fe67bb5cd7d12d0e6d2f07321202796a294f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/alessiospallino/.android/build-cache/48311fbe6395fb853677a5d3e458ad5931e4c1b4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="48ab283a4cda3b78eda2c149b588cb0aa0c66cc9">
+        <dex dex="/Users/alessiospallino/AndroidStudioProjects/ImagineM_App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6f0fbb2dcb2d537eb547677e65635b77236ad1b0/classes.dex" />
     </item>
 
 </items>
