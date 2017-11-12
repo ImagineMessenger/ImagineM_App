@@ -1,7 +1,12 @@
 package com.imaginemessenger;
 
+import android.app.AlertDialog;
+import android.app.Application;
+import android.content.ComponentName;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -112,20 +117,37 @@ public class MainActivity extends AppCompatActivity {
 
                 wait.setVisibility(View.INVISIBLE);
 
-                    lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                         @Override
                         public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                             Object o = lv1.getItemAtPosition(position);
-                            NewMessage newsData = (NewMessage) o;
+                            final NewMessage newsData = (NewMessage) o;
 
 
-                            //TODO: If one item is clicked, we will have all the info inside the newsdata obj.
-                            //TODO: At that point we can call the unity game passing the message!
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setTitle("GO AND FIND THE MESSAGE!")
+                                    .setMessage("Ready to play?")
+                                    .setCancelable(true)
+                                    .setPositiveButton("GO!",new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            //dialog.cancel();
+
+                                            Intent intent = new Intent();
+                                            Bundle bundle = new Bundle();
+                                            bundle.putString("MESSAGE", newsData.getMessage().trim());
+                                            intent.setComponent(new ComponentName("com.imagine.imaginem_app", "com.unity3d.player.UnityPlayerActivity"));
+                                            intent.putExtras(bundle);
+                                            startActivity(intent);
+                                        }
+                                    });
 
 
+                            AlertDialog alert = builder.create();
+                            alert.show();
 
-                            Toast.makeText(MainActivity.this, "Selected :" + " " + newsData.getMessage().trim(), Toast.LENGTH_SHORT).show();
+
+                            //Toast.makeText(MainActivity.this, "Selected :" + " " + newsData.getMessage().trim(), Toast.LENGTH_SHORT).show();
                         }
                     });
 
