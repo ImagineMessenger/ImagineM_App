@@ -134,10 +134,17 @@ public class MainActivity extends AppCompatActivity {
                                             //dialog.cancel();
 
                                             Intent intent = new Intent();
+                                            /*
                                             Bundle bundle = new Bundle();
                                             bundle.putString("MESSAGE", newsData.getMessage().trim());
                                             intent.setComponent(new ComponentName("com.imagine.imaginem_app", "com.unity3d.player.UnityPlayerActivity"));
-                                            intent.putExtras(bundle);
+                                            intent.putExtras(bundle);*/
+
+                                            intent = getPackageManager().getLaunchIntentForPackage("com.imagine.imaginem_app");
+                                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |Intent.FLAG_ACTIVITY_NEW_TASK );
+                                            intent.putExtra("arguments",newsData.getMessage().trim());
+
+
                                             startActivity(intent);
                                         }
                                     });
